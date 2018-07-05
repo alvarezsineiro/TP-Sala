@@ -1,0 +1,6 @@
+
+.body
+{
+  background :'./assets/imagenes/control.jpg';  
+  background-image: './../assets/imagenes/control.jpg';
+}

@@ -1,0 +1,48 @@
+<app-menu></app-menu>
+<body>
+  <br>
+  <br>
+  <div style="margin: 2%;text-align: center" class="animated bounceInRight">
+  <p-tabMenu [model]="items" [activeItem]="items[0]"></p-tabMenu>
+  <div *ngIf="flag==true">
+  <p-table [value]="jugadores">
+    <ng-template pTemplate="header" >
+        <tr >
+            <th style="background-color: #d89126 !important">Usuario</th>
+            <th style="background-color: #d89126 !important">Ganadas</th>
+            <th style="background-color: #d89126 !important">Perdidas</th>
+            <th style="background-color: #d89126 !important">Empatadas</th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-jugadores>
+        <tr>
+            <td style="background-color: #004e8e !important;color: white">{{jugadores.mail}}</td>
+            <td style="background-color: #004e8e !important;color: white">{{jugadores.ganadas}}</td>
+            <td style="background-color: #004e8e !important;color: white">{{jugadores.perdidas}}</td>
+            <td style="background-color: #004e8e !important;color: white">{{jugadores.empatadas}}</td>
+        </tr>
+    </ng-template>
+</p-table>
+</div>
+<div *ngIf="flag==false">
+   
+    <p-table [value]="jugadores">
+      <ng-template pTemplate="header">
+          <tr>
+              <th style="background-color: #d89126 !important">Usuario</th>
+              <th style="background-color: #d89126 !important">Ganadas</th>
+              <th style="background-color: #d89126 !important">Perdidas</th>
+          </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-jugadores>
+          <tr>
+              <td style="background-color: #004e8e !important;color: white">{{jugadores.mail}}</td>
+              <td style="background-color: #004e8e !important;color: white">{{jugadores.ganadas}}</td>
+              <td style="background-color: #004e8e !important;color: white">{{jugadores.perdidas}}</td>
+          </tr>
+      </ng-template>
+  </p-table>
+  </div>
+</div>
+</body>
+

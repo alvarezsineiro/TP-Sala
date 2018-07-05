@@ -1,0 +1,41 @@
+<app-menu></app-menu>
+<body>
+  <div style="margin: 5%;text-align: center" class="animated bounceInDown">
+    <p-panel>
+      <p-header>
+        ¿ Piedra papel o tijera?
+      </p-header>
+      <div [hidden]="yajugo"  *ngIf="jugar">
+
+        <h1 class="letra" >Seleccione una opcion</h1>
+        
+        <!--button  (click)="piedra()" src="/TP_LAV4_2017/assets/imagenes/piedra.jpg"></button>
+        <img class="PiedraPapelTijera animated zoomInUp" src="/TP_LAV4_2017/assets/imagenes/piedra.jpg" onclick="piedra()">
+        <img class="PiedraPapelTijera animated zoomInUp" src="/TP_LAV4_2017/assets/imagenes/papel.jpg" onclick="papel()">
+        <img class="PiedraPapelTijera animated zoomInLeft"  src="/TP_LAV4_2017/assets/imagenes/tijera.jpg" onclick="tijera()">
+        <button class="button"  (click)="piedra()">Jugar</button-->
+        <button  block width="80px" style="border-radius: 8px;background-color: orange" class="btn"
+        (click)=piedra()>
+        <img src="/assets/imagenes/piedra.jpg" height="300" width="200">
+          </button>
+          <button  block width="80px" style="border-radius: 8px;background-color: orange" class="btn"
+          (click)=papel()>
+          <img src="/assets/imagenes/papel.jpg" height="300" width="200">
+            </button>
+            <button  block width="80px" style="border-radius: 8px;background-color: orange" class="btn"
+            (click)=tijera()>
+            <img src="/assets/imagenes/tijera.jpg" height="300" width="200">
+              </button>
+      
+      </div>
+      <div [hidden]="!yajugo"  >
+        <h1>{{this.Mensaje}}</h1>
+        <h2>La maquina selecciono  {{this.eleccionMaquina}}</h2>
+          <button   block width="80px" 
+          (click)=comenzar() class="btn btn-info btn-lg">
+          Nuevo juego
+            </button>
+      </div>
+    </p-panel>
+  </div>
+</body>

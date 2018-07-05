@@ -1,0 +1,38 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+  
+  background-image: url("./assets/imagenes/control.jpg ") ;
+    background-repeat:no-repeat;
+    background-position:center center;
+    background-attachment:fixed;
+    -o-background-size: 100% 100%, auto;
+    -moz-background-size: 100% 100%, auto;
+    -webkit-background-size: 100% 100%, auto;
+    background-size: 100% 100%, auto;
+  
+}
+.ui-panel-content
+{
+  background: #cfbf65 !important;
+}
+.ui-panel-titlebar {
+  color: white !important;
+  background: #22810b !important;
+}
+
+.ui-menubar,.ui-menu-child,.ui-menu {
+    background: #004e8e !important;
+}
+.ui-tabmenuitem {
+  background: #d89126 !important;
+}
+
+.ui-tabmenu,.ui-menu-child,.ui-menu {
+  color: white !important;
+  background: #004e8e  !important;
+}
+.ui-table,.ui-table-caption,.ui-table-scrollable-header{
+  background-color: #004e8e  !important;
+}
+
+

@@ -1,0 +1,102 @@
+
+<body>
+    
+    
+    
+   
+      <!--form class="modal-content animate" style="text-align:center;border:solid">
+        <div class="container">
+          <label><b>Correo</b></label>
+          <br>
+          <input type="text" placeholder="Ingrese correo" name="email" required>
+          <br>
+          <label><b>Clave</b></label>
+          <br>
+          <input type="password" placeholder="Ingrese clave" name="psw" required>
+          <br>
+          <label><b>Repita la clave</b></label>
+          <br>
+          <input type="password" placeholder="Reingrese clave" name="psw-repeat" required>
+          <br>
+          <br>
+          <div class="clearfix">
+              
+            <button type="submit" class="signupbtn">Aceptar</button>
+          </div>
+          <br>
+        </div>
+      </form-->
+      <br>
+      <br>
+      <br>
+      <div style="margin: 5%;text-align: center;margin-left: 20%;margin-right: 20%" class="animated bounceInUp">
+<p-growl [value]="msgs" sticky="sticky"></p-growl>
+
+<form [formGroup]="userform" (ngSubmit)="onSubmit(userform.value)">
+    <p-panel header="Registro">
+        <div class="ui-grid ui-grid-responsive ui-grid-pad ui-fluid" style="margin: 10px 0px">
+            <div class="ui-grid-row">
+                <div class="ui-grid-col-4"  style="text-align: right;">
+                    Correo:
+                </div>
+                <div class="ui-grid-col-4">
+                    <input pInputText type="email" formControlName="firstname" placeholder="ejemplo@hotmal.com" pattern="[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}"/>
+                </div>
+                <div class="ui-grid-col-4">
+                  <div class="ui-message ui-messages-error ui-corner-all" *ngIf="!userform.controls['firstname'].valid&&userform.controls['firstname'].dirty">
+                      <i class="fa fa-close"></i>
+                      <span *ngIf="userform.controls['firstname'].errors['required']">Ingrese Correo</span>
+                      <span *ngIf="userform.controls['firstname'].errors['pattern']">Correo invalido</span>
+                  </div>
+              </div>
+            
+            </div>
+            
+            <div class="ui-grid-row">
+                <div class="ui-grid-col-4" style="text-align: right;">
+                    Contraseña:
+                </div>
+                <div class="ui-grid-col-4">
+                    <input pInputText type="password" formControlName="password" placeholder="123456"/>
+                </div>
+                <div class="ui-grid-col-4">
+                    <div class="ui-message ui-messages-error ui-corner-all" *ngIf="!userform.controls['password'].valid&&userform.controls['password'].dirty">
+                        <i class="fa fa-close"></i>
+                        <span *ngIf="userform.controls['password'].errors['required']">Ingrese contraseña</span>
+                    </div>
+                </div>
+            </div>
+            <div class="ui-grid-row">
+              <div class="ui-grid-col-4" style="text-align: right;">
+                  Confirme contraseña:
+              </div>
+              <div class="ui-grid-col-4">
+                  <input pInputText type="password" formControlName="password2" placeholder="123456"/>
+              </div>
+              <div class="ui-grid-col-4">
+                  <div class="ui-message ui-messages-error ui-corner-all" *ngIf="!userform.controls['password2'].valid&&userform.controls['password2'].dirty">
+                      <i class="fa fa-close"></i>
+                      <span *ngIf="userform.controls['password2'].errors['required']">Ingrese contraseña</span>
+                  </div>
+              </div>
+            </div>
+            
+            <div class="ui-grid-row">
+                <div class="ui-grid-col-4"></div>
+                <div class="ui-grid-col-2">
+                    <button pButton type="submit" class="ui-button-success" label="Aceptar" [disabled]="!userform.valid"></button>
+                </div>
+                
+                <div class="ui-grid-col-4"></div>
+            </div>
+            <!--div style="text-align:center;margin-top:20px" *ngIf="submitted">
+                Form Submitted
+                <br>
+                {{diagnostic}}
+            </div-->
+        </div>
+    </p-panel>
+</form>
+    
+    </div>
+    </body>

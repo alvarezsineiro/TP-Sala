@@ -1,0 +1,29 @@
+<app-menu></app-menu>
+<body>
+
+<div style="margin: 5%;text-align: center"  class="animated bounceInDown">
+  <p-panel  >
+  <p-header>
+    {{nuevoJuego.nombre}}
+  </p-header>
+  <form name="juego">
+    
+     <label>ingrese numero:  </label>  
+     <input [(ngModel)]="nuevoJuego.numeroIngresado" placeholder="ingrese numero" name="numeroIngresado" type="number" class="form-control" style="width:50%;margin-left: 25%"/>
+      <!--h1>{{nuevoJuego.numeroIngresado}}  </h1-->
+      <br>
+      <h4 [hidden]="ocultarVerificar"><button  *ngIf="nuevoJuego.numeroSecreto!=0" (click)="verificar()" class="btn btn-success btn-lg">Verificar</button></h4>
+   
+      <h4><button *ngIf="nuevoJuego.numeroSecreto==0 " (click)="generarnumero()"  class="btn btn-info btn-lg">Nuevo número secreto</button></h4>
+   
+      <!--h2><p *ngIf="nuevoJuego.numeroSecreto!=0" ><i class="fa fa-spinner fa-spin"></i>Esperando que ingrese un número</p></h2-->
+  
+      <h3 [hidden]="!nuevoJuego.gano">usted adivino el número</h3>
+      <h3 [hidden]="!perdio">usted aún no gano </h3>
+  
+  
+  </form>
+  <div id="snackbar">{{Mensajes}}</div>
+</p-panel>
+</div>
+</body>

@@ -1,0 +1,51 @@
+<app-menu></app-menu>
+<body>
+
+  <div style="margin: 5%;text-align: center" class="animated bounceInDown">
+    <p-panel>
+      <p-header>
+        4 Imagenes 1 Palabra!
+      </p-header>
+
+     
+        
+
+          <form name="juego">
+            
+           
+            <div > 
+              <img src={{imagen}} alt="">
+            </div>
+
+            <h1></h1>
+
+            <h2 [hidden]="ocultarVerificar">
+              <input [(ngModel)]="nuevoJuego.palabraIngresada" placeholder="ingrese la palabra correspondiente" name="palabraOrdenadaa" type="text"
+                class="form-control" style="width:50%;margin-left: 25%"  />
+            </h2>
+            <div class=padding>
+              <h2 [hidden]="ocultarVerificar">
+                <button *ngIf="nuevoJuego.esperando!=0" (click)="verificar()" class="btn btn-success btn-lg">Verificar {{Tiempo}} </button>
+              </h2>
+
+              <h2 [hidden]="ocultarComenzar">
+                <button *ngIf="nuevoJuego.imagen!=null " (click)="generarPalabra()" class="btn btn-info btn-lg">Comenzar</button>
+              </h2>
+
+            </div>
+            <div>
+              <h2 class="verde" [hidden]="!nuevoJuego.gano">usted adivino la palabra</h2>
+              <h3 [hidden]="!perdio">usted aún no gano </h3>
+            </div>
+          </form>
+
+          <div id="msj">
+            <h1>{{Mensajes}}</h1>
+          </div>
+
+
+    </p-panel>
+    
+
+  </div>
+</body>
